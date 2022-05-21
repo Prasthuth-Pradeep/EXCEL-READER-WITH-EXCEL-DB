@@ -1,0 +1,47 @@
+<input type='file' accept=".xls,.xlsx" (change)="onSearch($event)" />
+
+<div *ngFor="let data of searchData">
+  <span>Find for: {{ data.serverId }}</span><button
+    (click)="onFindInstance(data.vCPUs, data.memoryInGB, data.OSFamily, data.serverId)">Find</button>
+</div>
+
+<div class="container-m">
+  <div class="result">
+    <div *ngFor="let data of lastData ">
+      <div class="selected_data">
+        <div class="set">
+          <span class="title">Server ID</span>
+          <span class="color">{{ data.serverId }}</span>
+        </div>
+        <div class="set">
+          <span class="title">API Name</span>
+          <span class="color">{{ data.API_Name }}</span>
+        </div>
+        <div class="set">
+          <span class="title">Name</span>
+          <span class="color">{{ data.Name }}</span>
+        </div>
+        <div class="set">
+          <span class="title">Memory</span>
+          <span class="color">{{ data.Memory }}</span>
+        </div>
+        <div class="set">
+          <span class="title">vCPUs</span>
+          <span class="color">{{ data.vCPUs }}</span>
+        </div>
+        <div class="set">
+          <span class="title">Physical Processor</span>
+          <span class="color">{{ data.Physical_Processor }}</span>
+        </div>
+        <div class="set">
+          <span class="title">Linux on demand cost</span>
+          <span class="color">{{ data.Linux_On_Demand_cost }}</span>
+        </div>
+        <div class="set">
+          <span class="title">Windows on demand cost</span>
+          <span class="color">{{ data.Windows_On_Demand_cost }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
