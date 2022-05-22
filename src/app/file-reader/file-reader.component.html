@@ -1,4 +1,20 @@
-<input type='file' accept=".xls,.xlsx" (change)="onSearch($event)" />
+<div class="title">
+  <input type='file' accept=".xls,.xlsx" (change)="onSearch($event)" />
+  <form [formGroup]="dataForm">
+    <div>
+      <span>Memory list</span>
+      <select formControlName="memory">
+        <option [value]="data" *ngFor="let data of memoryList">{{data}}</option>
+      </select>
+    </div>
+    <div>
+      <span>Cpu list</span>
+      <select formControlName="cpu">
+        <option [value]="data" *ngFor="let data of cpuList">{{data}}</option>
+      </select>
+    </div>
+  </form>
+</div>
 
 <div *ngFor="let data of searchData">
   <span>Find for: {{ data.serverId }}</span><button
@@ -7,7 +23,7 @@
 
 <div class="container-m">
   <div class="result">
-    <div *ngFor="let data of lastData ">
+    <div *ngFor="let data of sortedData ">
       <div class="selected_data">
         <div class="set">
           <span class="title">Server ID</span>

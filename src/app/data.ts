@@ -84,3 +84,8 @@ export interface IResultData{
     Windows_On_Demand_cost?: number,
     Linux_On_Demand_cost?: number
 }
+
+export interface ICombo{
+    memory?: number,
+    cpu?: number
+}
