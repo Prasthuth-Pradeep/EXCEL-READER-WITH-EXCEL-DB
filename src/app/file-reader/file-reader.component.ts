@@ -80,13 +80,14 @@ export class FileReaderComponent implements OnInit {
     this.searchComboRS = comoList;
   }
 
-  find(memoryA: any, cpuA: any) {
+  find(cpuA: any, memoryA: any) {
+    console.log(memoryA, cpuA)
     let comboMemoryResult: ICombo[] = this.searchCombo.filter((memory) =>
       memory?.memory?.toLowerCase().includes(cpuA));
     // let comboCPUResult: ICombo[] = comboMemoryResult.filter((cpu) =>
     //   cpu?.cpu?.toLowerCase().includes(cpuA));
     // let filteredData = [...new Set([...comboMemoryResult])];
-    console.log(comboMemoryResult)
+    // console.log(comboMemoryResult)
   }
 
 
