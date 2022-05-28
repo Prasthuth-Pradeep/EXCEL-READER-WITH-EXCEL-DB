@@ -86,6 +86,6 @@ export interface IResultData{
 }
 
 export interface ICombo{
-    memory?: number,
-    cpu?: number
+    memory?: any,
+    cpu?: any
 }
